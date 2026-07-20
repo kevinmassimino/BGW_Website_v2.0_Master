@@ -1,7 +1,0 @@
-const PASSWORD='BGW';
-function checkPassword(){const input=document.getElementById('passwordInput');const msg=document.getElementById('passwordMessage');if(input&&input.value===PASSWORD){localStorage.setItem('bgw-auth','true');document.getElementById('gate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}else if(msg){msg.textContent='Wrong password. Try again.'}}
-function unlockIfAuthed(){if(localStorage.getItem('bgw-auth')==='true'){const g=document.getElementById('gate'),s=document.getElementById('site');if(g&&s){g.classList.add('hidden');s.classList.remove('hidden')}}}
-unlockIfAuthed();
-document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('passwordInput')===document.activeElement)checkPassword()});
-function tick(){const el=document.getElementById('countdown');if(!el)return;const target=new Date('2026-09-17T00:00:00');const now=new Date();let diff=Math.max(0,target-now);const d=Math.floor(diff/86400000);diff-=d*86400000;const h=Math.floor(diff/3600000);diff-=h*3600000;const m=Math.floor(diff/60000);diff-=m*60000;const sec=Math.floor(diff/1000);el.innerHTML=`<div><strong>${d}</strong><span>Days</span></div><div><strong>${h}</strong><span>Hours</span></div><div><strong>${m}</strong><span>Minutes</span></div><div><strong>${sec}</strong><span>Seconds</span></div>`}tick();setInterval(tick,1000);
-const toggle=document.querySelector('.menu-toggle');if(toggle){toggle.addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('open'))}
