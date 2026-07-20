@@ -1,0 +1,5 @@
+backend:
+  name: git-gateway
+media_folder: assets/images
+public_folder: /assets/images
+collections: []
