@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recordbook | Boys Golf Weekend</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/css/recordbook.css">
+</head>
+<body>
+<div id="gate" class="gate">
+  <div class="gate-card">
+    <img src="assets/logos/trophy.png" alt="BGW trophy logo">
+    <h1>Boys Golf Weekend</h1><p>Private trip hub. Password required.</p>
+    <input id="passwordInput" type="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Enter Site</button><small id="passwordMessage"></small>
+  </div>
+</div>
+<div id="site" class="site hidden">
+<nav class="nav">
+  <a class="brand" href="index.html"><img src="assets/logos/trophy.png" alt="BGW logo"><span>Boys Golf Weekend</span></a>
+  <button class="menu-toggle" aria-label="Open menu">☰</button>
+  <div class="nav-links"><a href="crew.html">The Crew</a><a href="trip-2026.html">2026 Trip</a><a href="future-locations.html">Future Locations</a><a href="trip-history.html">History</a><a href="results-stats.html">Results/Stats</a><a class="active" href="recordbook.html">Recordbook</a><a href="merch.html">Merch</a></div>
+</nav>
+<main>
+<section class="record-hero">
+  <div class="record-hero-copy">
+    <p class="eyebrow">The Official Archive</p>
+    <h1>BGW Record Book</h1>
+    <p class="lead">Every great round, career benchmark, course record and match-play milestone — calculated from the BGW master database.</p>
+  </div>
+  <div class="record-mark">EST.<br>2022</div>
+</section>
+
+<section class="record-shell">
+  <div id="recordKpis" class="record-kpis"></div>
+  <div class="record-toolbar">
+    <div class="record-search"><label for="recordSearch">Search records</label><input id="recordSearch" type="search" placeholder="Player, course, year or stat"></div>
+    <div><label for="recordSection">Section</label><select id="recordSection"><option value="all">All sections</option></select></div>
+    <button id="expandAll" class="record-action">Expand all</button>
+  </div>
+  <nav id="recordTabs" class="record-tabs" aria-label="Record book sections"></nav>
+  <div id="recordContent" class="record-content"><p class="record-loading">Loading the record book…</p></div>
+  <aside class="record-methodology">
+    <h2>How the records are calculated</h2>
+    <p id="methodologyText"></p>
+    <p><strong>Ranking:</strong> Competition ranking is used for ties (1, 2, 2, 4). All entries tied at the tenth-ranked value are displayed.</p>
+  </aside>
+</section>
+</main>
+<footer class="footer"><img src="assets/logos/trophy.png" alt="BGW logo"><p>© 2026 Boys Golf Weekend • Private trip hub for the BGW crew.</p></footer>
+</div>
+<script src="script.js"></script>
+<script src="assets/js/recordbook.js"></script>
+</body>
+</html>
