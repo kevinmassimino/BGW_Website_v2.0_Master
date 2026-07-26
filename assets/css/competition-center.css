@@ -21,3 +21,7 @@
 .hole-scorecard .hole-scroll{padding-bottom:8px}
 .hole-scorecard .hole-grid{border-radius:0 14px 14px 0;border-left:0}
 @media(max-width:760px){.match-card.winner-left .match-summary::before,.match-card.winner-right .match-summary::after{width:100%;clip-path:none;opacity:.1}.match-side.is-winner{color:inherit}.match-side.is-winner small{color:#6f776f}.hole-scorecard{grid-template-columns:96px minmax(0,1fr);min-width:0}.scorecard-names{grid-template-rows:33px 27px 27px 6px minmax(30px,1fr)}}
+
+
+/* Team roster shown directly on the overall score graphic */
+.year-button{min-width:max-content}.board-roster{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px;margin-top:15px;text-align:left}.board-roster a{display:flex;align-items:center;gap:7px;color:#34443c;text-decoration:none;font-size:12px;font-weight:800;min-width:0}.board-roster img{width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.18);flex:none}.board-roster span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.net-chart{margin-top:28px;padding-top:24px;border-top:1px solid #dce4df}.net-chart h3{margin:0 0 14px;color:#173f31;font-size:1.25rem}.net-chart iframe{display:block;width:100%;height:620px;border:0;border-radius:16px;background:#f2f5f3}@media(max-width:760px){.board-roster{grid-template-columns:1fr}.board-roster a{font-size:11px}.net-chart iframe{height:500px}}
