@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>2026 Trip | Boys Golf Weekend</title><link href="styles.css" rel="stylesheet"/><style>
+.trip-weather{padding:3rem 1.25rem 3.5rem;background:#f4f6f2;color:#173b2c}
+.trip-weather-inner{max-width:1180px;margin:0 auto}
+.trip-weather-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.trip-weather-head .eyebrow{margin:0 0 .35rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.76rem;color:#6f7c75}
+.trip-weather-head h2{margin:0;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1}
+.trip-weather-head p{margin:.55rem 0 0;color:#68736d}
+.weather-source{white-space:nowrap;font-size:.88rem;font-weight:700;color:#174c39;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+.weather-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.8rem}
+.weather-day{background:#fff;border:1px solid #dbe2dd;border-radius:18px;padding:1rem;box-shadow:0 7px 18px rgba(18,50,37,.06);min-height:160px}
+.weather-day.trip-date{border-color:#8cb8a3;box-shadow:0 8px 22px rgba(20,77,57,.1)}
+.weather-date{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#758078}
+.weather-icon{font-size:2rem;line-height:1;margin:.75rem 0 .45rem}
+.weather-desc{font-weight:800;font-size:.96rem;min-height:2.4em}
+.weather-temp{font-size:1.55rem;font-weight:900;margin-top:.5rem;color:#123f2e}
+.weather-low{font-size:.95rem;color:#6f7873;font-weight:700}
+.weather-rain{margin-top:.55rem;font-size:.8rem;color:#657069}
+.weather-status{background:#fff;border:1px solid #dbe2dd;border-radius:16px;padding:1rem;color:#68736d}
+.weather-foot{margin:.85rem 0 0;font-size:.78rem;color:#7b847f}
+@media(max-width:760px){.trip-weather{padding:2.25rem 1rem 2.75rem}.trip-weather-head{align-items:flex-start;flex-direction:column}.weather-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.weather-day:last-child{grid-column:1/-1}.weather-source{white-space:normal}}
+
+.trip-data-section{padding:3rem 1.25rem;background:#fff;color:#173b2c}
+.trip-data-section.alt{background:#f4f6f2}
+.trip-data-inner{max-width:1180px;margin:0 auto}
+.trip-data-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1.25rem}
+.trip-data-head .eyebrow{margin:0 0 .35rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.76rem;color:#6f7c75}
+.trip-data-head h2{margin:0;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1}
+.trip-data-head p{margin:.55rem 0 0;color:#68736d}
+.trip-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #dbe2dd;border-radius:18px;background:#fff;box-shadow:0 7px 18px rgba(18,50,37,.05)}
+.trip-table{width:100%;border-collapse:collapse;min-width:1000px;font-size:.86rem}
+.trip-table th,.trip-table td{padding:.72rem .68rem;border-bottom:1px solid #e6ebe7;border-right:1px solid #edf1ee;text-align:center;white-space:nowrap}
+.trip-table th:last-child,.trip-table td:last-child{border-right:0}
+.trip-table thead th{background:#173b2c;color:#fff;font-weight:800}
+.trip-table thead tr.subhead th{background:#eaf0ec;color:#173b2c;font-size:.78rem}
+.trip-table tbody th{background:#f7f9f7;text-align:left;position:sticky;left:0;z-index:1;color:#173b2c}
+.trip-table .yardage-row td,.trip-table .yardage-row th{font-size:.75rem;font-style:italic;color:#68736d;background:#f7f9f7}
+.trip-table .hcap{font-weight:900}
+.trip-table .na{color:#9aa39e}
+.scouting-table{min-width:1080px}
+.trend{display:inline-flex;align-items:center;gap:.28rem;font-weight:900}
+.trend.good{color:#1f7a45}
+.trend.bad{color:#b43a35}
+.trend.flat{color:#68736d}
+.scouting-table td.record{font-variant-numeric:tabular-nums;font-weight:800}
+.trip-data-note{margin:.8rem 0 0;color:#7b847f;font-size:.78rem}
+@media(max-width:760px){
+  .trip-data-section{padding:2.25rem 1rem}
+  .trip-data-head{align-items:flex-start;flex-direction:column}
+  .trip-table{font-size:.8rem}
+  .trip-table th,.trip-table td{padding:.62rem .55rem}
+}
+
+</style></head><body><div class="gate" id="gate"><div class="gate-card"><img alt="BGW trophy logo" src="assets/logos/trophy.png"/><h1>Boys Golf Weekend</h1><p>Private trip hub. Password required.</p><input id="passwordInput" placeholder="Enter password" type="password"/><button onclick="checkPassword()">Enter Site</button><small id="passwordMessage"></small></div></div><div class="site hidden" id="site"><nav class="nav"><a class="brand" href="index.html"><img alt="BGW logo" src="assets/logos/trophy.png"/><span>Boys Golf Weekend</span></a><button aria-label="Open menu" class="menu-toggle">☰</button><div class="nav-links"><a href="crew.html">The Crew</a><a href="trip-2026.html">2026 Trip</a><a href="future-locations.html">Future Locations</a><a href="trip-history.html">History</a><a href="results-stats.html">Results/Stats</a><a href="recordbook.html">Recordbook</a></div></nav><main><section class="destination-hero bend full"><div class="dest-panel"><p class="eyebrow">Next Up</p><h1>Bend, Oregon</h1><p class="lead">September 17–21, 2026</p><div class="countdown" id="countdown"></div><div class="hero-actions"><a class="button" href="https://docs.google.com/document/d/11YLXy3KHw4nO8WAssfxGYMtUmLq3ndG8mthJflPn0DM/edit?tab=t.0" target="_blank">Trip Itinerary</a></div><div class="info-icons overlay-cards"><article><span>📅</span><h3>Dates</h3><p>September 17–21, 2026</p></article><article><span>⛳</span><h3>Courses</h3><div class="course-link-list"><div><strong>Pronghorn</strong> — <a href="https://pronghorn.club/golf/jack-nicklaus-signature-course/" target="_blank" rel="noopener">Website</a> | <a href="https://www.youtube.com/watch?v=gzByGeEa8q0" target="_blank" rel="noopener">Course Flyover</a></div><div><strong>Lost Tracks</strong> — <a href="https://www.losttracks.com" target="_blank" rel="noopener">Website</a> | <a href="https://www.losttracks.com/gallery/" target="_blank" rel="noopener">Course Photos</a></div><div><strong>Old Back 9</strong> — <a href="https://www.oldbacknine.com" target="_blank" rel="noopener">Website</a></div><div><strong>Tetherow</strong> — <a href="https://tetherow.com/luxury-golf-resort/" target="_blank" rel="noopener">Website</a> | <a href="https://coursepreview.golf/tetherow/?hole=1" target="_blank" rel="noopener">Hole-by-Hole Preview</a></div><div><strong>Aspen Lakes</strong> — <a href="https://www.aspenlakes.com" target="_blank" rel="noopener">Website</a> | <a href="https://www.youtube.com/watch?v=3SU4-yATQ1o" target="_blank" rel="noopener">Course Flyover</a></div></div></article><article><span>🏠</span><h3>Lodging</h3><p>Private Airbnb basecamp for 12.</p><a class="button secondary dark card-button" href="https://www.airbnb.com/rooms/15447204?check_out=2026-09-21&amp;viralityEntryPoint=1&amp;s=76&amp;adults=12&amp;check_in=2026-09-17&amp;unique_share_id=6C4A9BFA-2EE5-4633-8F95-CC60C5E89737&amp;source_impression_id=p3_1778184288_P3XOTL1SCttziL-A" target="_blank">View Airbnb</a></article></div></div></section>
+<section class="trip-data-section" aria-labelledby="course-handicap-title">
+  <div class="trip-data-inner">
+    <div class="trip-data-head">
+      <div>
+        <p class="eyebrow">Bend 2026</p>
+        <h2 id="course-handicap-title">Course Handicaps</h2>
+        <p>Playing handicaps by tee/course setup for the 2026 trip.</p>
+      </div>
+    </div>
+    <div class="trip-table-wrap">
+      <table class="trip-table course-handicap-table">
+        <thead>
+          <tr>
+            <th rowspan="2">Name</th><th rowspan="2">HCP</th>
+            <th colspan="3">Pronghorn</th><th colspan="3">Lost Tracks</th>
+            <th>Old Back 9</th><th colspan="3">Tetherow</th><th colspan="3">Aspen Lakes</th>
+          </tr>
+          <tr class="subhead">
+            <th>Black</th><th>Rust</th><th>Gold</th>
+            <th>Championship</th><th>Tournament</th><th>Middle</th>
+            <th>Blue</th><th>Black</th><th>Tan</th><th>Sage</th>
+            <th>Blue</th><th>White</th><th>Gold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="yardage-row">
+            <th scope="row">Yardage (Slope)</th><td></td>
+            <td>7,049 (147)</td><td>6,533 (144)</td><td>5,841 (131)</td>
+            <td>7,003 (135)</td><td>6,401 (127)</td><td>6,073 (124)</td>
+            <td>2,952 (118)</td>
+            <td>6,933 (149)</td><td>6,490 (139)</td><td>5,960 (133)</td>
+            <td>6,919 (136)</td><td>6,535 (131)</td><td>6,064 (125)</td>
+          </tr>
+          <tr><th scope='row'>Jared</th><td class='hcap'>1.4</td><td>4</td><td>1</td><td class="na">—</td><td>3</td><td>0</td><td class="na">—</td><td>(+1)</td><td>3</td><td>1</td><td class="na">—</td><td>3</td><td>1</td><td class="na">—</td></tr>
+<tr><th scope='row'>Dom</th><td class='hcap'>4.8</td><td>9</td><td>6</td><td class="na">—</td><td>7</td><td>4</td><td class="na">—</td><td>1</td><td>8</td><td>5</td><td class="na">—</td><td>7</td><td>5</td><td class="na">—</td></tr>
+<tr><th scope='row'>Karl</th><td class='hcap'>5.3</td><td>10</td><td>6</td><td class="na">—</td><td>8</td><td>5</td><td class="na">—</td><td>1</td><td>9</td><td>6</td><td class="na">—</td><td>8</td><td>6</td><td class="na">—</td></tr>
+<tr><th scope='row'>Danny</th><td class='hcap'>5.7</td><td>10</td><td>7</td><td class="na">—</td><td>8</td><td>5</td><td class="na">—</td><td>1</td><td>9</td><td>6</td><td class="na">—</td><td>8</td><td>6</td><td class="na">—</td></tr>
+<tr><th scope='row'>Adam</th><td class='hcap'>5.8</td><td>10</td><td>7</td><td class="na">—</td><td>8</td><td>5</td><td class="na">—</td><td>1</td><td>9</td><td>7</td><td class="na">—</td><td>8</td><td>6</td><td class="na">—</td></tr>
+<tr><th scope='row'>AJ</th><td class='hcap'>7.8</td><td>13</td><td>9</td><td class="na">—</td><td>11</td><td>7</td><td class="na">—</td><td>2</td><td>12</td><td>9</td><td class="na">—</td><td>11</td><td>8</td><td class="na">—</td></tr>
+<tr><th scope='row'>Nick</th><td class='hcap'>9.5</td><td>15</td><td>12</td><td class="na">—</td><td>13</td><td>9</td><td class="na">—</td><td>3</td><td>14</td><td>11</td><td class="na">—</td><td>13</td><td>10</td><td class="na">—</td></tr>
+<tr><th scope='row'>Matt M</th><td class='hcap'>14.1</td><td>22</td><td>17</td><td class="na">—</td><td>18</td><td>15</td><td class="na">—</td><td>6</td><td>20</td><td>17</td><td class="na">—</td><td>18</td><td>16</td><td class="na">—</td></tr>
+<tr><th scope='row'>Kevin</th><td class='hcap'>14.6</td><td class="na">—</td><td>18</td><td class="na">—</td><td class="na">—</td><td>15</td><td class="na">—</td><td>6</td><td class="na">—</td><td>17</td><td class="na">—</td><td class="na">—</td><td>16</td><td class="na">—</td></tr>
+<tr><th scope='row'>Matt F</th><td class='hcap'>26</td><td class="na">—</td><td>33</td><td>27</td><td class="na">—</td><td>28</td><td>26</td><td>12</td><td class="na">—</td><td>31</td><td>28</td><td class="na">—</td><td>30</td><td>26</td></tr>
+<tr><th scope='row'>Sam</th><td class='hcap'>27</td><td class="na">—</td><td>34</td><td>28</td><td class="na">—</td><td>29</td><td>27</td><td>12</td><td class="na">—</td><td>33</td><td>29</td><td class="na">—</td><td>31</td><td>27</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="trip-data-note">A dash indicates that tee/course setup is not being used for that player.</p>
+  </div>
+</section>
+
+<section class="trip-data-section alt" aria-labelledby="scouting-title">
+  <div class="trip-data-inner">
+    <div class="trip-data-head">
+      <div>
+        <p class="eyebrow">Form Guide</p>
+        <h2 id="scouting-title">2026 Scouting Report</h2>
+        <p>Current handicap, recent movement, activity and career BGW match records for the 11 golfers attending Bend.</p>
+      </div>
+    </div>
+    <div class="trip-table-wrap">
+      <table class="trip-table scouting-table">
+        <thead>
+          <tr>
+            <th>Name</th><th>Handicap</th><th>1 Year Trend</th><th>4 Month Trend</th>
+            <th>Posted Rounds in 2026</th><th>Match Play Record</th><th>Best Ball Record</th><th>Overall Record</th>
+          </tr>
+        </thead>
+        <tbody><tr><th scope='row'>Kevin Massimino</th><td class='hcap'>14.6</td><td><span class="trend good">↓ 0.2</span></td><td><span class="trend good">↓ 1.8</span></td><td>33</td><td class='record'>3-3-0</td><td class='record'>1-4-1</td><td class='record'>4-7-1</td></tr>
+<tr><th scope='row'>Jared Powell</th><td class='hcap'>1.4</td><td><span class="trend bad">↑ 1.0</span></td><td><span class="trend good">↓ 0.4</span></td><td>37</td><td class='record'>4-1-1</td><td class='record'>3-3-0</td><td class='record'>7-4-1</td></tr>
+<tr><th scope='row'>Karl Dubeau</th><td class='hcap'>5.3</td><td><span class="trend good">↓ 0.9</span></td><td><span class="trend good">↓ 1.3</span></td><td>10</td><td class='record'>1-3-0</td><td class='record'>1-3-1</td><td class='record'>2-6-1</td></tr>
+<tr><th scope='row'>Dominic Denby</th><td class='hcap'>4.8</td><td><span class="trend good">↓ 1.9</span></td><td><span class="trend good">↓ 0.1</span></td><td>9</td><td class='record'>3-3-0</td><td class='record'>2-4-0</td><td class='record'>5-7-0</td></tr>
+<tr><th scope='row'>Danny Peterson</th><td class='hcap'>5.7</td><td><span class="trend good">↓ 2.9</span></td><td><span class="trend bad">↑ 0.5</span></td><td>20</td><td class='record'>5-1-0</td><td class='record'>5-1-0</td><td class='record'>10-2-0</td></tr>
+<tr><th scope='row'>Nick Lodato</th><td class='hcap'>9.5</td><td><span class="trend bad">↑ 1.3</span></td><td><span class="trend good">↓ 0.3</span></td><td>3</td><td class='record'>3-1-2</td><td class='record'>4-1-1</td><td class='record'>7-2-3</td></tr>
+<tr><th scope='row'>Sam Gunning</th><td class='hcap'>27</td><td><span class="trend good">↓ 0.9</span></td><td><span class="trend good">↓ 0.6</span></td><td>8</td><td class='record'>0-5-0</td><td class='record'>0-4-1</td><td class='record'>0-9-1</td></tr>
+<tr><th scope='row'>Matt Fiore</th><td class='hcap'>26</td><td><span class="trend good">↓ 1.3</span></td><td><span class="trend good">↓ 0.2</span></td><td>4</td><td class='record'>1-5-0</td><td class='record'>3-2-1</td><td class='record'>4-7-1</td></tr>
+<tr><th scope='row'>Adam Miller</th><td class='hcap'>5.8</td><td><span class="trend bad">↑ 2.0</span></td><td><span class="trend bad">↑ 2.4</span></td><td>20</td><td class='record'>2-0-1</td><td class='record'>2-1-1</td><td class='record'>4-1-2</td></tr>
+<tr><th scope='row'>AJ Santomauro</th><td class='hcap'>7.8</td><td><span class="trend good">↓ 0.5</span></td><td><span class="trend bad">↑ 1.0</span></td><td>20</td><td class='record'>1-1-1</td><td class='record'>1-3-0</td><td class='record'>2-4-1</td></tr>
+<tr><th scope='row'>Matt Malewitz</th><td class='hcap'>14.1</td><td><span class="trend good">↓ 1.3</span></td><td><span class="trend good">↓ 0.7</span></td><td>6</td><td class='record'>1-1-0</td><td class='record'>0-0-1</td><td class='record'>1-1-1</td></tr></tbody>
+      </table>
+    </div>
+    <p class="trip-data-note">Trend compares the current 2026 handicap with the 2025 recorded handicap and May 2026 handicap. Green ↓ = improvement; red ↑ = regression. Lower handicaps are better.</p>
+  </div>
+</section>
+<section class="trip-weather" aria-labelledby="weather-title"><div class="trip-weather-inner"><div class="trip-weather-head"><div><p class="eyebrow">Bend Forecast</p><h2 id="weather-title">Trip Weather</h2><p id="weather-subtitle">Live forecast for September 17–21.</p></div><a class="weather-source" href="https://www.accuweather.com/en/us/bend/97703/10-day-weather-forecast/335268" target="_blank" rel="noopener">View full forecast ↗</a></div><div id="weather-grid" class="weather-grid"><div class="weather-status">Loading Bend weather…</div></div><p class="weather-foot">Forecast updates automatically when this page is opened. Weather data supplied by Open-Meteo; use the linked AccuWeather forecast for additional detail.</p></div></section></main><footer class="footer"><img alt="BGW logo" src="assets/logos/trophy.png"/><p>© 2026 Boys Golf Weekend • Private trip hub for the BGW crew.</p></footer></div><script>
+(function(){
+  const grid=document.getElementById('weather-grid');
+  const subtitle=document.getElementById('weather-subtitle');
+  if(!grid) return;
+  const tripStart='2026-09-17', tripEnd='2026-09-21';
+  const codeMap={0:['☀️','Clear'],1:['🌤️','Mostly clear'],2:['⛅','Partly cloudy'],3:['☁️','Cloudy'],45:['🌫️','Fog'],48:['🌫️','Fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌧️','Heavy drizzle'],61:['🌦️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Rain showers'],81:['🌧️','Rain showers'],82:['⛈️','Heavy showers'],85:['🌨️','Snow showers'],86:['❄️','Heavy snow showers'],95:['⛈️','Thunderstorms'],96:['⛈️','Thunderstorms'],99:['⛈️','Severe thunderstorms']};
+  const fmtDate=d=>new Intl.DateTimeFormat('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'America/Los_Angeles'}).format(new Date(d+'T12:00:00-07:00'));
+  const api='https://api.open-meteo.com/v1/forecast?latitude=44.0582&longitude=-121.3153&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&timezone=America%2FLos_Angeles&forecast_days=16';
+  fetch(api).then(r=>{if(!r.ok) throw new Error('weather request failed');return r.json();}).then(data=>{
+    const d=data.daily||{}, rows=(d.time||[]).map((date,i)=>({date,code:d.weather_code[i],hi:d.temperature_2m_max[i],lo:d.temperature_2m_min[i],rain:d.precipitation_probability_max[i]}));
+    const tripRows=rows.filter(x=>x.date>=tripStart&&x.date<=tripEnd);
+    let shown;
+    if(tripRows.length===5){ shown=tripRows; subtitle.textContent='Live forecast for September 17–21.'; }
+    else { shown=rows.slice(0,10); subtitle.textContent='Live 10-day Bend forecast. Trip dates will appear here once they enter the forecast window.'; }
+    grid.innerHTML=shown.map(x=>{const w=codeMap[x.code]||['🌤️','Forecast'];const trip=x.date>=tripStart&&x.date<=tripEnd;return `<article class="weather-day${trip?' trip-date':''}"><div class="weather-date">${fmtDate(x.date)}${trip?' · TRIP':''}</div><div class="weather-icon" aria-hidden="true">${w[0]}</div><div class="weather-desc">${w[1]}</div><div class="weather-temp">${Math.round(x.hi)}°</div><div class="weather-low">Low ${Math.round(x.lo)}°</div><div class="weather-rain">Precipitation ${x.rain==null?'—':Math.round(x.rain)+'%'}</div></article>`;}).join('');
+  }).catch(()=>{
+    grid.innerHTML='<div class="weather-status">The live forecast is temporarily unavailable. <a href="https://www.accuweather.com/en/us/bend/97703/10-day-weather-forecast/335268" target="_blank" rel="noopener">View Bend weather on AccuWeather.</a></div>';
+    subtitle.textContent='September 17–21, 2026 · Bend, Oregon';
+  });
+})();
+</script><script src="script.js"></script></body></html>
